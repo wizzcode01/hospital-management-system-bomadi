@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, FileText, UserCog, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Calendar, FileText, User, Stethoscope, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { StatCard, Card, SectionHeader, Avatar, statusBadge } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { patientStorage, appointmentStorage, recordStorage } from '../../utils/storage';
@@ -77,7 +77,7 @@ export default function PatientDashboard() {
           </div>
           {!data?.recentApts.length ? (
             <div className="py-12 text-center">
-              <p className="text-3xl mb-2">📅</p>
+              <Calendar size={40} className="text-teal-500 mx-auto mb-2" />
               <p className="text-sm font-medium text-gray-600">No appointments yet</p>
               <button onClick={() => navigate('/patient/appointments')} className="text-xs text-teal-600 mt-1.5 hover:underline">Book your first appointment</button>
             </div>
@@ -142,10 +142,10 @@ export default function PatientDashboard() {
           <Card className="p-4 space-y-2">
             <h3 className="text-sm font-semibold text-navy-800 mb-3">Quick Actions</h3>
             {[
-              { label: 'Book Appointment', icon: '📅', path: '/patient/appointments' },
-              { label: 'Find a Doctor', icon: '👨‍⚕️', path: '/patient/doctors' },
-              { label: 'View My Records', icon: '📋', path: '/patient/records' },
-              { label: 'My Profile', icon: '👤', path: '/patient/profile' },
+              { label: 'Book Appointment', icon: <Calendar size={16} className="text-teal-500" />, path: '/patient/appointments' },
+              { label: 'Find a Doctor', icon: <Stethoscope size={16} className="text-teal-500" />, path: '/patient/doctors' },
+              { label: 'View My Records', icon: <FileText size={16} className="text-teal-500" />, path: '/patient/records' },
+              { label: 'My Profile', icon: <User size={16} className="text-teal-500" />, path: '/patient/profile' },
             ].map(a => (
               <button key={a.label} onClick={() => navigate(a.path)}
                 className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 transition-all text-left font-medium">

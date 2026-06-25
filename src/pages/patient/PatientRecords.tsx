@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { FileText, ChevronDown, ChevronUp, Pill, FlaskConical } from 'lucide-react';
+import { FileText, ChevronDown, ChevronUp, Pill, FlaskConical, Calendar, Info } from 'lucide-react';
 import { Card, SectionHeader, Avatar, EmptyState } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { recordStorage } from '../../utils/storage';
@@ -58,7 +58,7 @@ export default function PatientRecords() {
                     {rec.followUpDate && (
                       <div className="bg-amber-50 border border-amber-100 rounded-xl p-3.5">
                         <p className="text-xs font-medium text-amber-500 mb-1">Follow-Up Date</p>
-                        <p className="text-sm font-semibold text-amber-800">📅 {rec.followUpDate}</p>
+                        <p className="text-sm font-semibold text-amber-800 flex items-center gap-1"><Calendar size={12} />{rec.followUpDate}</p>
                         <p className="text-xs text-amber-600 mt-0.5">Please attend this follow-up appointment</p>
                       </div>
                     )}
@@ -81,7 +81,7 @@ export default function PatientRecords() {
                             <p className="text-xs text-teal-600 mt-1">{rx.frequency} for {rx.duration}</p>
                             {rx.instructions && (
                               <p className="text-xs text-gray-500 mt-1.5 flex items-start gap-1">
-                                <span className="text-amber-500 flex-shrink-0">ℹ️</span> {rx.instructions}
+                                <Info size={12} className="text-amber-500 flex-shrink-0" /> {rx.instructions}
                               </p>
                             )}
                           </div>

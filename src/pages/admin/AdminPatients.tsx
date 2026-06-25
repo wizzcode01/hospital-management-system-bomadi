@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Users, Phone, Mail, Calendar, Droplets } from 'lucide-react';
+import { Search, Users, Phone, Mail, Calendar, Droplets, AlertTriangle } from 'lucide-react';
 import { Card, Input, Select, SectionHeader, Avatar, EmptyState, statusBadge } from '../../components/ui';
 import { patientStorage, appointmentStorage } from '../../utils/storage';
 import type { Patient } from '../../types';
@@ -100,7 +100,9 @@ export default function AdminPatients() {
 
                 {selected.allergies.length > 0 && (
                   <div className="bg-amber-50 border border-amber-100 rounded-xl p-3">
-                    <p className="text-xs font-semibold text-amber-700 mb-2">⚠️ Allergies</p>
+                    <p className="text-xs font-semibold text-amber-700 mb-2 inline-flex items-center gap-1">
+                      <AlertTriangle size={12} /> Allergies
+                    </p>
                     <div className="flex flex-wrap gap-1.5">
                       {selected.allergies.map(a => (
                         <span key={a} className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">{a}</span>

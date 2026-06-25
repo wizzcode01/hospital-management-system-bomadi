@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Phone, Mail, Calendar, Star } from 'lucide-react';
+import { Search, Phone, Mail, Calendar, Star, Clock } from 'lucide-react';
 import { Card, Input, Select, SectionHeader, Avatar, Button, Modal } from '../../components/ui';
 import { useNavigate } from 'react-router-dom';
 import { doctorStorage } from '../../utils/storage';
@@ -69,7 +69,7 @@ export default function PatientDoctors() {
                 <span>{doc.availableDays.slice(0, 3).join(', ')}{doc.availableDays.length > 3 ? ` +${doc.availableDays.length - 3}` : ''}</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-gray-300">🕐</span>
+                <Clock size={11} className="text-gray-300 flex-shrink-0" />
                 <span>{doc.availableHours}</span>
               </div>
             </div>

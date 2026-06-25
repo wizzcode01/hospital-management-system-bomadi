@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Users, CheckCircle, Clock } from 'lucide-react';
+import { Calendar, Users, CheckCircle, Clock, Sparkles } from 'lucide-react';
 import { StatCard, Card, SectionHeader, Avatar, statusBadge } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { doctorStorage, appointmentStorage, recordStorage } from '../../utils/storage';
@@ -72,7 +72,7 @@ export default function DoctorDashboard() {
           </div>
           {!data?.todayApts.length ? (
             <div className="py-12 text-center">
-              <p className="text-2xl mb-2">🎉</p>
+              <Sparkles size={32} className="text-teal-500 mx-auto mb-2" />
               <p className="text-sm font-medium text-gray-600">No appointments today</p>
               <p className="text-xs text-gray-400 mt-1">Enjoy your day!</p>
             </div>

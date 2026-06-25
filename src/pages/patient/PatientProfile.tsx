@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Edit3, Save, X, Phone, Mail, MapPin, Droplets, AlertCircle } from 'lucide-react';
+import { Edit3, Save, X, Phone, Mail, MapPin, Droplets, User, Calendar, AlertTriangle } from 'lucide-react';
 import { Card, Button, Input, Select, SectionHeader, Avatar, Alert } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { patientStorage, userStorage } from '../../utils/storage';
@@ -107,7 +107,7 @@ export default function PatientProfile() {
         {/* Personal Info */}
         <Card className="p-5">
           <h3 className="text-sm font-semibold text-navy-800 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-teal-50 flex items-center justify-center text-teal-500 text-xs">👤</span>
+            <User size={15} className="text-teal-500" />
             Personal Information
           </h3>
           {editing ? (
@@ -127,8 +127,8 @@ export default function PatientProfile() {
               {[
                 { icon: <Mail size={13} />, label: 'Email', value: patient.email },
                 { icon: <Phone size={13} />, label: 'Phone', value: patient.phone },
-                { icon: <span className="text-xs">🎂</span>, label: 'Date of Birth', value: patient.dateOfBirth },
-                { icon: <span className="text-xs">👤</span>, label: 'Gender', value: patient.gender },
+                { icon: <Calendar size={13} />, label: 'Date of Birth', value: patient.dateOfBirth },
+                { icon: <User size={13} />, label: 'Gender', value: patient.gender },
                 { icon: <Droplets size={13} />, label: 'Blood Group', value: patient.bloodGroup },
                 { icon: <MapPin size={13} />, label: 'Address', value: patient.address },
               ].map(item => (
@@ -144,7 +144,7 @@ export default function PatientProfile() {
         {/* Allergies */}
         <Card className="p-5">
           <h3 className="text-sm font-semibold text-navy-800 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 text-xs">⚠️</span>
+            <AlertTriangle size={15} className="text-amber-500" />
             Allergies
           </h3>
           {editing ? (
@@ -192,7 +192,7 @@ export default function PatientProfile() {
         {/* Emergency Contact */}
         <Card className="p-5">
           <h3 className="text-sm font-semibold text-navy-800 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center text-red-500 text-xs">🚨</span>
+            <Phone size={15} className="text-red-500" />
             Emergency Contact
           </h3>
           {editing ? (

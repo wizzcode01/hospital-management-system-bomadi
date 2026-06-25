@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Plus, Calendar, XCircle, Search } from 'lucide-react';
+import { Plus, Calendar, XCircle, Search, Clock } from 'lucide-react';
 import { Card, Button, Input, Select, Textarea, SectionHeader, Avatar, statusBadge, EmptyState, Modal, Alert } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { appointmentStorage, doctorStorage, patientStorage, generateId } from '../../utils/storage';
@@ -135,8 +135,8 @@ export default function PatientAppointments() {
                           {statusBadge(apt.status)}
                         </div>
                         <div className="flex items-center gap-3 mt-2 text-xs text-gray-500">
-                          <span>📅 {apt.date}</span>
-                          <span>🕐 {apt.time}</span>
+                          <span className="flex items-center gap-1"><Calendar size={12} />{apt.date}</span>
+                          <span className="flex items-center gap-1"><Clock size={12} />{apt.time}</span>
                         </div>
                         <p className="text-sm text-gray-600 mt-2 bg-gray-50 rounded-lg px-3 py-2">{apt.reason}</p>
                       </div>

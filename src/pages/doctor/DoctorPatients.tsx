@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Users, FileText, Phone, Mail, Droplets } from 'lucide-react';
+import { Search, Users, FileText, Phone, Mail, Droplets, AlertTriangle, Pill } from 'lucide-react';
 import { Card, Input, SectionHeader, Avatar, EmptyState, statusBadge } from '../../components/ui';
 import { useAuth } from '../../context/AuthContext';
 import { appointmentStorage, patientStorage, recordStorage } from '../../utils/storage';
@@ -92,7 +92,9 @@ export default function DoctorPatients() {
                   </div>
                   {selected.allergies.length > 0 && (
                     <div className="mt-3 bg-amber-50 border border-amber-100 rounded-xl p-3">
-                      <p className="text-xs font-semibold text-amber-700 mb-1.5">⚠️ Known Allergies</p>
+                      <p className="text-xs font-semibold text-amber-700 mb-1.5 inline-flex items-center gap-1">
+                        <AlertTriangle size={12} /> Known Allergies
+                      </p>
                       <div className="flex flex-wrap gap-1.5">
                         {selected.allergies.map(a => (
                           <span key={a} className="text-xs bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium">{a}</span>
@@ -151,7 +153,9 @@ export default function DoctorPatients() {
                           {rec.prescription.length > 0 && (
                             <div className="mt-2 flex flex-wrap gap-1.5">
                               {rec.prescription.map(rx => (
-                                <span key={rx.id} className="text-xs bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">💊 {rx.medication}</span>
+                                <span key={rx.id} className="text-xs bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                                  <Pill size={10} className="text-teal-700" /> {rx.medication}
+                                </span>
                               ))}
                             </div>
                           )}
