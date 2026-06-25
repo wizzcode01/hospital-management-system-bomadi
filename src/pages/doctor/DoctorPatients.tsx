@@ -81,8 +81,8 @@ export default function DoctorPatients() {
                     {[
                       { icon: <Mail size={11} />, value: selected.email },
                       { icon: <Phone size={11} />, value: selected.phone },
-                      { icon: <span>📍</span>, value: selected.address },
-                      { icon: <span>🎂</span>, value: selected.dateOfBirth },
+                      { icon: <span></span>, value: selected.address },
+                      { icon: <span></span>, value: selected.dateOfBirth },
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2.5 text-gray-600">
                         <span className="text-gray-400 flex-shrink-0">{item.icon}</span>
