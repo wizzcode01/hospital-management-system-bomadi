@@ -73,13 +73,13 @@ export default function PatientDashboard() {
         <Card className="lg:col-span-2 overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-50">
             <h2 className="text-base font-semibold text-navy-800">My Appointments</h2>
-            <button onClick={() => navigate('/patient/appointments')} className="text-xs text-teal-600 hover:underline font-medium">View all →</button>
+            <button onClick={() => navigate('/patient/appointments')} className="text-xs text-teal-600 hover:underline font-medium">View all</button>
           </div>
           {!data?.recentApts.length ? (
             <div className="py-12 text-center">
               <p className="text-3xl mb-2">📅</p>
               <p className="text-sm font-medium text-gray-600">No appointments yet</p>
-              <button onClick={() => navigate('/patient/appointments')} className="text-xs text-teal-600 mt-1.5 hover:underline">Book your first appointment →</button>
+              <button onClick={() => navigate('/patient/appointments')} className="text-xs text-teal-600 mt-1.5 hover:underline">Book your first appointment</button>
             </div>
           ) : (
             <div className="divide-y divide-gray-50">
@@ -121,7 +121,7 @@ export default function PatientDashboard() {
           <Card className="overflow-hidden">
             <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
               <h3 className="text-sm font-semibold text-navy-800">Recent Records</h3>
-              <button onClick={() => navigate('/patient/records')} className="text-xs text-teal-600 hover:underline">View all →</button>
+              <button onClick={() => navigate('/patient/records')} className="text-xs text-teal-600 hover:underline">View all</button>
             </div>
             {!data?.recentRecords.length ? (
               <p className="text-xs text-gray-400 text-center py-6">No records yet</p>
